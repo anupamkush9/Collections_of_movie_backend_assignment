@@ -1,0 +1,1033 @@
+{
+	"info": {
+		"_postman_id": "54ddf8c0-4d75-401e-8e8e-9c1bd70f8424",
+		"name": "my_backend_assignment_postman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24493940"
+	},
+	"item": [
+		{
+			"name": "get_all_collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTg0OTg4LCJpYXQiOjE2ODcxODEzODgsImp0aSI6ImM2ODM5ZGJkZDMzYTQyMjU5ODBmZmExOTlhZDMwNTYwIiwidXNlcl9pZCI6Mn0.QNEUk5AF_n9JnYpnBRxj1vewDtkXm5dbUrSZVJ87uCc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/collection",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"collection"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get_all_collection",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/collection",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"collection"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 19 Jun 2023 13:10:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "532"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"uuid\": \"d49b3a8d-0e0a-42b3-b0f8-1ac6aa79b1c9\",\n        \"title\": \"collection55555\",\n        \"description\": \"This is the first description...\",\n        \"movies\": [\n            {\n                \"title\": \"1st Movie......\",\n                \"description\": \"Description of 1st movie\",\n                \"genres\": \"action\",\n                \"uuid\": \"df6ab9cc-84f2-46db-95ee-fb14d3c93f8f\"\n            },\n            {\n                \"title\": \"2nd Movie......\",\n                \"description\": \"Description of 2nd movie\",\n                \"genres\": \"drama\",\n                \"uuid\": \"b5abea3c-e7e5-4013-bf13-a8eabc7175f5\"\n            },\n            {\n                \"title\": \"3nd Movie......\",\n                \"description\": \"Description of 3rd movie\",\n                \"genres\": \"drama\",\n                \"uuid\": \"d0606f6b-0027-4c3c-ba49-2fbd827ea0f8\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get_details_of_specific_collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTg0NDgwLCJpYXQiOjE2ODcxODA4ODAsImp0aSI6IjdkNDMxM2M3NWU2MDRkYjBhYzZmZGRhODNlMjMxNzNjIiwidXNlcl9pZCI6Mn0.kf7zLMTKb3DO-I1-S4eZBtMfV16p9wX8HzmhvJ8v7Wg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/collection/adb07e0d-57b7-42f6-83b2-9e016919db51",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"collection",
+						"adb07e0d-57b7-42f6-83b2-9e016919db51"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get_details_of_specific_collection",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/collection/adb07e0d-57b7-42f6-83b2-9e016919db51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"collection",
+								"adb07e0d-57b7-42f6-83b2-9e016919db51"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 19 Jun 2023 13:22:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "530"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"uuid\": \"adb07e0d-57b7-42f6-83b2-9e016919db51\",\n    \"title\": \"collection55555\",\n    \"description\": \"This is the first description...\",\n    \"movies\": [\n        {\n            \"title\": \"1st Movie......\",\n            \"description\": \"Description of 1st movie\",\n            \"genres\": \"action\",\n            \"uuid\": \"ba6386ba-5335-4f7b-8adb-2572d070d59c\"\n        },\n        {\n            \"title\": \"2nd Movie......\",\n            \"description\": \"Description of 2nd movie\",\n            \"genres\": \"drama\",\n            \"uuid\": \"d2858c8e-7645-44f0-9864-69ab7751fe23\"\n        },\n        {\n            \"title\": \"3nd Movie......\",\n            \"description\": \"Description of 3rd movie\",\n            \"genres\": \"drama\",\n            \"uuid\": \"b4ae0c39-6b49-4be9-95fb-3c75c8ba0be2\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get_access_token_by_refresh_token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY4NzI2NTEwOCwiaWF0IjoxNjg3MTc4NzA4LCJqdGkiOiI5YzUwYTk4YTM2OTU0ZGJlYjA3NmNhZTViNTYyYzU2OSIsInVzZXJfaWQiOjJ9.oOJXzYse17SMRiI4wLpRvDT-wd4t61WacaMzj-n9SwY\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/token/refresh/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "obtain_access_token_and_refresh_toekn Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY4NzI2NTEwOCwiaWF0IjoxNjg3MTc4NzA4LCJqdGkiOiI5YzUwYTk4YTM2OTU0ZGJlYjA3NmNhZTViNTYyYzU2OSIsInVzZXJfaWQiOjJ9.oOJXzYse17SMRiI4wLpRvDT-wd4t61WacaMzj-n9SwY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/token/refresh/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 19 Jun 2023 13:22:50 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "483"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTg0NTcwLCJpYXQiOjE2ODcxNzg3MDgsImp0aSI6IjgxMDJlM2I3YTA5ZTQ5NzE4MGU3YjRmZDNmODBlNjJhIiwidXNlcl9pZCI6Mn0.0K2gW1eQBrW8KPdo5Cj6dIHuTxILodEDNjK4z_omnUA\",\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY4OTc3Mjk3MCwiaWF0IjoxNjg3MTgwOTcwLCJqdGkiOiJiNzEzNzcxYTFiNzI0MjlkYTQ3MmI5Mzg5ZjE1MWE3NyIsInVzZXJfaWQiOjJ9.MD3iBlNzdoS5Xpxro8rNsIKhMeBeirC_MdTZT2bgYZs\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTgwMzI3LCJpYXQiOjE2ODcxODAwMjcsImp0aSI6IjlmMTAzY2Q4Y2MyNjRjYjhhODMyYTBiZjkwMGUzNzdjIiwidXNlcl9pZCI6Mn0.-vO-9v_rfAmaasOdU-uDk2ReAflRSRfdfDQGHJ4R9dI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"collection55555\",\n    \"description\": \"This is the first description...\",\n    \"movies\": [\n        {\n            \"title\": \"1st Movie......\",\n            \"description\": \"Description of 1st movie\",\n            \"genres\": \"action\"\n        },\n        {\n            \"title\": \"2nd Movie......\",\n            \"description\": \"Description of 2nd movie\",\n            \"genres\": \"drama\"\n        },\n        {\n            \"title\": \"3nd Movie......\",\n            \"description\": \"Description of 3rd movie\",\n            \"genres\": \"drama\"\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/collection/599e7562-2239-4b72-9797-6b5aeb7412e3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"collection",
+						"599e7562-2239-4b72-9797-6b5aeb7412e3",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete_Collection",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"collection55555\",\n    \"description\": \"This is the first description...\",\n    \"movies\": [\n        {\n            \"title\": \"1st Movie......\",\n            \"description\": \"Description of 1st movie\",\n            \"genres\": \"action\"\n        },\n        {\n            \"title\": \"2nd Movie......\",\n            \"description\": \"Description of 2nd movie\",\n            \"genres\": \"drama\"\n        },\n        {\n            \"title\": \"3nd Movie......\",\n            \"description\": \"Description of 3rd movie\",\n            \"genres\": \"drama\"\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/collection/599e7562-2239-4b72-9797-6b5aeb7412e3/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"collection",
+								"599e7562-2239-4b72-9797-6b5aeb7412e3",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 19 Jun 2023 13:08:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Collection deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get_all_movies_with_paginated_response",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTg0MjY0LCJpYXQiOjE2ODcxODA2NjQsImp0aSI6ImQ0NDk4YzBiYjdmMDQyMWQ4NmJiYmVkODk1MTAyN2EyIiwidXNlcl9pZCI6Mn0.-90ivs7NZShMfh1is0XShEFlpKAEdckwRWBs5muhu7U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"movies"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get_movies_list_with_paginated_response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"movies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 19 Jun 2023 13:19:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1414"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 26,\n    \"next\": \"http://localhost:8000/api/v1/movies/?page=2\",\n    \"previous\": null,\n    \"data\": [\n        {\n            \"title\": \"1st Movie......\",\n            \"description\": \"Description of 1st movie\",\n            \"genres\": \"action\",\n            \"uuid\": \"02bba937-9d68-4a26-8e5d-8eac8e2ed267\"\n        },\n        {\n            \"title\": \"2nd Movie......\",\n            \"description\": \"Description of 1st movie\",\n            \"genres\": \"drama\",\n            \"uuid\": \"28fbee61-c8fc-4717-913b-fb89a6e60e73\"\n        },\n        {\n            \"title\": \"1st Movie......\",\n            \"description\": \"Description of 1st movie\",\n            \"genres\": \"action\",\n            \"uuid\": \"3d1feffe-db59-4671-99dd-5f931f54e900\"\n        },\n        {\n            \"title\": \"2nd Movie......\",\n            \"description\": \"Description of 2nd movie\",\n            \"genres\": \"drama\",\n            \"uuid\": \"f4f57178-af86-4edd-b08e-e91b9f0eb1df\"\n        },\n        {\n            \"title\": \"3nd Movie......\",\n            \"description\": \"Description of 3rd movie\",\n            \"genres\": \"drama\",\n            \"uuid\": \"4b7605d0-83c2-4799-8b22-e599df2a0c5a\"\n        },\n        {\n            \"title\": \"1st Movie......\",\n            \"description\": \"Description of 1st movie\",\n            \"genres\": \"action\",\n            \"uuid\": \"eaad4156-575a-4de9-80a4-38a2a64d7c05\"\n        },\n        {\n            \"title\": \"2nd Movie......\",\n            \"description\": \"Description of 2nd movie\",\n            \"genres\": \"drama\",\n            \"uuid\": \"d5041572-7f09-43ce-9a6a-abe31268c150\"\n        },\n        {\n            \"title\": \"3nd Movie......\",\n            \"description\": \"Description of 3rd movie\",\n            \"genres\": \"drama\",\n            \"uuid\": \"54a278f4-5849-40ec-b0ed-35791e297e84\"\n        },\n        {\n            \"title\": \"1st Movie......\",\n            \"description\": \"Description of 1st movie\",\n            \"genres\": \"action\",\n            \"uuid\": \"4d3b2ce9-d7a4-4a60-96f6-eb578dbff672\"\n        },\n        {\n            \"title\": \"2nd Movie......\",\n            \"description\": \"Description of 2nd movie\",\n            \"genres\": \"drama\",\n            \"uuid\": \"08521bc7-7237-4f30-bf2d-3e53e63499eb\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "create collection",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTg0NDgwLCJpYXQiOjE2ODcxODA4ODAsImp0aSI6IjdkNDMxM2M3NWU2MDRkYjBhYzZmZGRhODNlMjMxNzNjIiwidXNlcl9pZCI6Mn0.kf7zLMTKb3DO-I1-S4eZBtMfV16p9wX8HzmhvJ8v7Wg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"collection55555\",\n    \"description\": \"This is the first description...\",\n    \"movies\": [\n        {\n            \"title\": \"45\",\n            \"description\": \"Description of 1st movie\",\n            \"genres\": \"action\"\n        },\n        {\n            \"title\": \"2nd Movie......\",\n            \"description\": \"Description of 2nd movie\",\n            \"genres\": \"drama\"\n        },\n        {\n            \"title\": \"3nd Movie......\",\n            \"description\": \"Description of 3rd movie\",\n            \"genres\": \"drama\"\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/collection/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"collection",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create_collection",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"collection55555\",\n    \"description\": \"This is the first description...\",\n    \"movies\": [\n        {\n            \"title\": \"1st Movie......\",\n            \"description\": \"Description of 1st movie\",\n            \"genres\": \"action\"\n        },\n        {\n            \"title\": \"2nd Movie......\",\n            \"description\": \"Description of 2nd movie\",\n            \"genres\": \"drama\"\n        },\n        {\n            \"title\": \"3nd Movie......\",\n            \"description\": \"Description of 3rd movie\",\n            \"genres\": \"drama\"\n        }\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/collection/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"collection",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 19 Jun 2023 13:07:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"collection_uuid\": \"599e7562-2239-4b72-9797-6b5aeb7412e3\"\n}"
+				}
+			]
+		},
+		{
+			"name": "register_api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"anupam\",\n    \"password\":\"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/accounts/register/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"register",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register_api_task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"anupam\",\n    \"password\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/accounts/register/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"register",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 19 Jun 2023 13:00:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "247"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTc5OTA4LCJpYXQiOjE2ODcxNzk2MDgsImp0aSI6Ijk3MDk3MjliY2VjNDQ1NmQ4MTAyMmE1MDg0Yzk2NzY3IiwidXNlcl9pZCI6Mn0.GCKQlrq24urvB_Oi47eF4FZO1sf7PZRr9Opr0h5N_rs\"\n}"
+				}
+			]
+		},
+		{
+			"name": "request_count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/request-count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"request-count"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get_request_count",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/request-count/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"request-count",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 19 Jun 2023 13:02:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"requests\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "request_count reset",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTg4OTc5LCJpYXQiOjE2ODcxODUzNzksImp0aSI6IjAwODc0YTMzZTU3OTQ2ODVhOGNhYmVlMzM4ZWI5YzhiIiwidXNlcl9pZCI6Mn0.zESp_zYwRmdo565xsOBCRj0l9S70mP09kiL-RzVroNY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/request-count/reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"request-count",
+						"reset"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "reset_request_count",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/request-count/reset",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"request-count",
+								"reset"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 19 Jun 2023 13:00:41 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Request count reset successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "obtain_access_token_and_refresh_toekn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"anupam\",\n    \"password\":\"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/token/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register_api Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"anupam\",\n    \"password\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/token/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 19 Jun 2023 12:59:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "483"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY4NzI2NTk4NCwiaWF0IjoxNjg3MTc5NTg0LCJqdGkiOiJjNjdmMjdlZDg2MTI0ZTBmODI2ZThmNTZiZmFkMDFiNyIsInVzZXJfaWQiOjJ9.zeJ6-ytngum8bSqK6RfcUuqdIjLvaIER5VsnSLy3Swo\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTc5ODg0LCJpYXQiOjE2ODcxNzk1ODQsImp0aSI6Ijg0NWRjZWM2ODA5MzQyZjViZDg2YTM5YjYwOGE2ZGQ5IiwidXNlcl9pZCI6Mn0.Hg9FCKcEtgUXGa5V42X32mzYrzzF9mJVuN8lkGrPmtU\"\n}"
+				}
+			]
+		}
+	]
+}
