@@ -30,5 +30,5 @@
 
 <br>
 
-### For viewing swagger below visit  
+### For Testing the API 
 Hit the postman collection given.
