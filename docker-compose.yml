@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  django_backend_assignment:
+    build: .
+    container_name: django_backend_assignment
+    command: python3.8 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/src 
+    ports:
+      - 8000:8000
