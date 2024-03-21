@@ -35,5 +35,16 @@ Hit the postman collection given.
 
 # or
 
-Run below command
+### Run below command
 > sudo docker compose up
+
+### Go inside django_backend_assignment container and then execute makemigrations command and migrate command
+> sudo docker exec -it django_backend_assignment bash
+
+> python3.8 manage.py makemigrations
+
+> python3.8 manage.py makemigrations accounts
+
+> python3.8 manage.py makemigrations movies_collection
+
+> python3.8 manage.py migrate 
