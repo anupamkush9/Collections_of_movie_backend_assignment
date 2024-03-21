@@ -32,3 +32,8 @@
 
 ### For Testing the API 
 Hit the postman collection given.
+
+# or
+
+Run below command
+> sudo docker compose up
