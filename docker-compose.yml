@@ -1,6 +1,7 @@
 version: "3"
 
 services:
+
   django_backend_assignment:
     build: .
     container_name: django_backend_assignment
@@ -9,3 +10,24 @@ services:
       - .:/src 
     ports:
       - 8000:8000
+    networks:
+      - vpc_network
+
+  # Database (Postgres)
+  backend_assignment_db:
+    image: postgres:12.4
+    container_name: backend_assignment_db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5435:5432"
+    volumes:
+      - .local_data/postgres:/var/lib/postgresql/data
+    networks:
+      - vpc_network
+
+networks:
+  vpc_network:
+    driver: bridge
