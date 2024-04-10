@@ -6,12 +6,12 @@ from django.views.generic import ListView
 
 from blog.models import Post
 
-class PostListView(PermissionRequiredMixin, ListView):
-    permission_required = "blog.view_post"
-    template_name = "blog/post_list.html"
-    model = Post
-    
-# class PostListView(ListView):
+# class PostListView(PermissionRequiredMixin, ListView):
+#     permission_required = "blog.view_post"
+#     template_name = "blog/post_list.html"
 #     model = Post
-#     template_name = 'blog/post_list.html'
-#     context_object_name = 'posts'
+    
+class PostListView(ListView):
+    model = Post
+    template_name = 'blog/post_list.html'
+    context_object_name = 'posts'
