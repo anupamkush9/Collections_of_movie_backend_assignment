@@ -16,10 +16,10 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        {% if perms.blog.view_posts %}
-            <h1> You have viewing permission for posts </h1>
+        {% if perms.blog.set_published_status %}
+            <h1> You have viewing permission for set_published_status </h1>
         {% else %}
-            <h1> You don't have permission </h1>
+            <h1> You don't have permission for set_published_status</h1>
         {% endif %}
         
         <script src="" async defer></script>

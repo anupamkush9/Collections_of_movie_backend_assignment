@@ -5,7 +5,6 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import ListView
 
 from blog.models import Post
-
 # class PostListView(PermissionRequiredMixin, ListView):
 #     permission_required = "blog.view_post"
 #     template_name = "blog/post_list.html"
