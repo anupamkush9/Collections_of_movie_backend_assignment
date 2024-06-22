@@ -22,7 +22,8 @@ class UserPermissionCreditAdmin(admin.ModelAdmin):
                     model_permission_code_name = f"{each_permission}_{permission_name}"
                     model_permission = Permission.objects.get(codename__iexact=model_permission_code_name)
                     user.user_permissions.add(model_permission)
-
+                    # Ref : https://testdriven.io/blog/django-permissions/ 
+                    # Ref : https://testdriven.io/blog/django-permissions/ 
         except Permission.DoesNotExist:
             print(f"Permission {model_permission_code_name} does not exist.")
         except Exception as e:
@@ -40,6 +41,9 @@ class UserPermissionCreditAdmin(admin.ModelAdmin):
                     model_permission_code_name = f"{each_permission}_{permission_name}"
                     model_permission = Permission.objects.get(codename__iexact=model_permission_code_name)
                     user.user_permissions.remove(model_permission)
+                    # Ref : https://testdriven.io/blog/django-permissions/ 
+                    # Ref : https://testdriven.io/blog/django-permissions/ 
+                    
                 # Now delete the UserPermissionCredit object
                 obj.delete()
         except Permission.DoesNotExist:
