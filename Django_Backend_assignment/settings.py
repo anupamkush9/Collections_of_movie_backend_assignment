@@ -156,3 +156,5 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,
     'USER_ID_FIELD': 'id',
 }
+
+LOGOUT_REDIRECT_URL = '/posts'

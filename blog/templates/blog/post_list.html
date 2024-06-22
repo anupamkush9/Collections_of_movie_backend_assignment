@@ -1,28 +1,65 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Beautiful Navbar Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 
-        {% comment %} # ref : https://testdriven.io/blog/django-permissions/ {% endcomment %}
-        {% comment %} # ref : https://testdriven.io/blog/django-permissions/ {% endcomment %}
+    {% comment %} Ref : https://testdriven.io/blog/django-permissions/ {% endcomment %}
+    {% comment %} Ref : https://testdriven.io/blog/django-permissions/ {% endcomment %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Nav item visible only if the user has permission for 'view_post' -->
+                {% if perms.blog.view_post %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'post-list' %}">Post</a>
+                    </li>
+                {% endif %}
+                <!-- Nav item visible only if the user has permission for 'view_user' -->
+                {% if perms.movies_collection.view_movie %}
+                    <li class="nav-item">
+                        <a class="nav-link" >Movie</a>
+                    </li>
+                {% endif %}
+                {% if perms.movies_collection.view_collection %}
+                    <li class="nav-item">
+                        <a class="nav-link" >Collection</a>
+                    </li>
+                {% endif %}
+                {% if perms.movies_collection.view_moviecollection %}
+                    <li class="nav-item">
+                        <a class="nav-link" >MovieCollection</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" >{{request.user}}</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-        {% if perms.blog.set_published_status %}
-            <h1> You have viewing permission for set_published_status </h1>
-        {% else %}
-            <h1> You don't have permission for set_published_status</h1>
-        {% endif %}
-        
-        <script src="" async defer></script>
-    </body>
+    <div class="container mt-5">
+        <!-- Content here -->
+        <h1>Welcome to the Beautiful Navbar Example</h1>
+        <p>This is an example of a responsive navbar using Bootstrap that displays different links based on user permissions.</p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
