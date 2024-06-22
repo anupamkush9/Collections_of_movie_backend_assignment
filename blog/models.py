@@ -11,3 +11,6 @@ class Post(models.Model):
                 "Can set the status of the post to either publish or not"
             )
         ]
+        
+        # ref : https://testdriven.io/blog/django-permissions/
+        # ref : https://testdriven.io/blog/django-permissions/
