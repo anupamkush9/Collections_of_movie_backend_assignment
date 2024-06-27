@@ -9,7 +9,9 @@ from rest_framework import viewsets
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
-
+from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample, PolymorphicProxySerializer, OpenApiResponse
+from drf_spectacular.types import OpenApiTypes
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
 class MoviePagination(PageNumberPagination):
     page_size = 10
@@ -32,7 +34,6 @@ class MovieViewSet(viewsets.ModelViewSet):
     serializer_class = MovieSerializer
     pagination_class = MoviePagination
 
-
 class CollectionViewSet(viewsets.ModelViewSet):
     lookup_field = "uuid"
     queryset = Collection.objects.all()
@@ -51,6 +52,32 @@ class CollectionViewSet(viewsets.ModelViewSet):
         except Exception as e:
             return Response({"error": e, "message": "Oops! Something went wrong"})
 
+    @extend_schema(responses={
+        200: PolymorphicProxySerializer(
+                component_name='Person',
+                serializers=[CollectionSerializer, MovieSerializer],
+                resource_type_field_name='type',
+        ),
+        400: OpenApiResponse(
+                response={
+                    "type": "object",
+                    "properties": {
+                        "error": {"type": "string", "example": "Invalid input data."}
+                    }
+                },
+                description="Bad Request with error message."
+            ),
+        403: OpenApiResponse(
+                response=OpenApiTypes.STR,
+                description="Forbidden",
+                examples=[
+                    OpenApiExample(
+                        'Forbidden Response',
+                        value="You do not have permission to perform this action."
+                    )
+                ]
+            ),
+    })
     def create(self, request, *args, **kwargs):
         try:
             serializer = self.get_serializer(data=request.data)
@@ -71,6 +98,60 @@ class CollectionViewSet(viewsets.ModelViewSet):
         except AssertionError as e:
             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
+    @extend_schema(
+        # Extra parameters added to the schema
+        parameters=[
+            OpenApiParameter(name='artist', description='Filter by artist', required=False, type=str),
+            OpenApiParameter(
+                name='release',
+                type=OpenApiTypes.DATE,
+                location=OpenApiParameter.QUERY,
+                description='Filter by release date',
+                examples=[
+                    OpenApiExample(
+                        'Example 1',
+                        summary='Search by Date',
+                        description='Valid date example',
+                        value='1993-08-23'
+                    ),
+                    OpenApiExample(
+                        'Example 2',
+                        summary='Search by Name',
+                        description='Name',
+                        value='john doe'
+                    ),
+                ],
+            ),
+        ],
+        # Override default docstring extraction
+        description='More descriptive text',
+        # Provide Authentication class that deviates from the views default
+        auth=None,
+        # Change the auto-generated operation name
+        operation_id=None,
+        # Or even completely override what AutoSchema would generate. Provide raw Open API spec as Dict.
+        operation=None,
+        # Attach request/response examples to the operation.
+        examples=[
+            OpenApiExample(
+                'Example 1',
+                summary='200',
+                description='An example of a serialized Song object',
+                value={
+                    "artist": "Nirvana",
+                    "release": "1991-09-24",
+                    "title": "Smells Like Teen Spirit",
+                    "album": "Nevermind"
+                }
+            ),
+            OpenApiExample(
+                'Example 2',
+                summary='400',
+                description='Another example of a serialized Song object',
+                value="There is an errror"
+            ),
+        ],
+    )
     def list(self, request, *args, **kwargs):
         try:
             queryset = self.filter_queryset(self.get_queryset())
