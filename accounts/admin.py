@@ -12,10 +12,7 @@ class UserPermissionCreditAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         try:
-            with transaction.atomic():
-                # First, save the UserPermissionCredit object
-                super().save_model(request, obj, form, change)
-                
+            with transaction.atomic():     
                 # Retrieve permission and user details
                 permission_name = obj.permission
                 user = obj.user
@@ -38,21 +35,23 @@ class UserPermissionCreditAdmin(admin.ModelAdmin):
                 else:  
                     # changes for post title wise permission
                     from blog.models import Post
-                    post_titles = Post.objects.all().values_list('title', flat=True)
+                    post_titles = Post.objects.filter(title=obj.permission).values_list('title', flat=True)
                     post_titles = [(post_title,post_title.replace("_"," ")) for post_title in post_titles]
 
                     # Create or extend permissions with these titles
                     content_type = ContentType.objects.get_for_model(Post)
 
                     for original_title, modified_title in post_titles:
-                        permission, created = Permission.objects.get_or_create(
-                            codename=f'can_view_{original_title.lower()}',
-                            name=f'Can view {modified_title}',
-                            content_type=content_type,
-                        )
+                        if not obj.id:
+                            permission, created = Permission.objects.get_or_create(
+                                codename=f'can_view_{original_title.lower()}',
+                                name=f'Can view {modified_title}',
+                                content_type=content_type,
+                            )
                     code_name = f"can_view_{permission_name}"
                     model_permission = Permission.objects.get(codename__iexact=code_name)
                     user.user_permissions.add(model_permission)
+                super().save_model(request, obj, form, change)
         except Permission.DoesNotExist:
             print(f"Permission does not exist.")
         except Exception as e:
