@@ -14,6 +14,12 @@ def getpermissionchoices():
     features_permissions_list.append(( "moviecollection", "MovieCollection"))
     features_permissions_list.append(( "collection", "Collection"))
     features_permissions_list.append(( "movie", "Movie"))
+    
+    # changes for post title wise permission
+    from blog.models import Post
+    post_titles = Post.objects.all().values_list('title', flat=True)
+    post_titles = [(post_title,post_title.replace("_"," ")) for post_title in post_titles]
+    features_permissions_list.extend(post_titles)
     return features_permissions_list
 
 class UserPermissionCredit(models.Model):
