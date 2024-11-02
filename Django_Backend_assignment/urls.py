@@ -19,7 +19,7 @@ from rest_framework import routers
 import movies_collection.views
 from accounts.views import get_request_count, reset_request_count
 from rest_framework_simplejwt import views as jwt_views
-from blog.views import PostListView, PermissionTestingView, ExampleView, example_view
+from blog.views import PostListView, PermissionTestingView, ExampleView, Example1View
 from django.contrib.auth import views as auth_views
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
@@ -40,7 +40,7 @@ urlpatterns = [
     path('posts/', PostListView.as_view(), name='post-list'),
     path('perm_testing_view/', PermissionTestingView.as_view(), name='permission-testing-view'),
     path('example/', ExampleView.as_view(), name='example-throating-view'),
-    path('ex/', example_view, name='ex-throating-view'),
+    path('example1/', Example1View.as_view(), name='example1-throating-view'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
