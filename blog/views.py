@@ -23,7 +23,7 @@ class PostListView(ListView):
 # ref : https://testdriven.io/blog/django-permissions/
 # ref : https://testdriven.io/blog/django-permissions/
 
-class PermissionTestingView(APIView):
+class PermissionTestingAPIView(APIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [BasicAuthentication]
     def get(self, request):
