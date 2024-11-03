@@ -10,6 +10,7 @@ from rest_framework.views  import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import BasicAuthentication
+from .throttling import RandomRateThrottle
 
 # class PostListView(PermissionRequiredMixin, ListView):
 #     permission_required = "blog.view_post"
@@ -28,7 +29,7 @@ class ExampleView(APIView):
         return Response(content)
 
 class Example1View(APIView):
-    throttle_scope = 'max'
+    throttle_classes = [RandomRateThrottle]
     def get(self, request, format=None):
         content = {
             'status': 'request1 was permitted'
