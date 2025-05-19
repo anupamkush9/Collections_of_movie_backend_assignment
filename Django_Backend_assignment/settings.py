@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-g58#3y4y=q8f0fxat6mzd^(bu)dp%^b!rgee(^i50#^$@_2rab
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -151,11 +151,10 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.ScopedRateThrottle'
+        'blog.throttling.IPBasedThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
-        'min': '2/minute',
-        'max': '4/minute'
+        'ip': '3/minute',  # Limit to 10 requests per minute per IP
     }
 }
 

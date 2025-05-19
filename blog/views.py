@@ -10,7 +10,7 @@ from rest_framework.views  import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import BasicAuthentication
-from .throttling import RandomRateThrottle
+from .throttling import RandomRateThrottle, IPBasedThrottle
 
 # class PostListView(PermissionRequiredMixin, ListView):
 #     permission_required = "blog.view_post"
@@ -53,4 +53,10 @@ class PermissionTestingView(APIView):
         if not request.user.has_perm("blog.set_published_status"):
             return Response({"error":"You don't have permission to access it"})
         return Response({"Success":"API is working fine. Welcome...."})
-        
+
+
+class MyThrottledView(APIView):
+    throttle_classes = [IPBasedThrottle]
+
+    def get(self, request):
+        return Response({"message": "Request successful"})

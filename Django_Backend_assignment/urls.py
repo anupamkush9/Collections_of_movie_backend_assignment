@@ -19,7 +19,7 @@ from rest_framework import routers
 import movies_collection.views
 from accounts.views import get_request_count, reset_request_count
 from rest_framework_simplejwt import views as jwt_views
-from blog.views import PostListView, PermissionTestingView, ExampleView, Example1View
+from blog.views import PostListView, PermissionTestingView, ExampleView, Example1View, MyThrottledView
 from django.contrib.auth import views as auth_views
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
@@ -35,6 +35,7 @@ urlpatterns = [
     # path('request-count/', get_request_count),
     path('request-count/', get_request_count, name='get_request_count'),
     path('request-count/reset/', reset_request_count, name='reset_request_count'),
+    path('throttle/', MyThrottledView.as_view(), name='my-throttle-view'),
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('posts/', PostListView.as_view(), name='post-list'),
